@@ -2,7 +2,7 @@
 
 				<div id="inner-footer" class="wrap cf">
 
-					<?php /* Uncomment this and the 'Footer Links' menu registration in template.php to use. 
+					<?php /* Uncomment this and the 'Footer Links' menu registration in template.php to use.
 					Or delete it if you're not using it.
 
 					<nav role="navigation">
@@ -18,8 +18,8 @@
     					'link_after' => '',                             // after each link
     					'depth' => 0,                                   // limit the depth of the nav
     					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-						)); 
-					</nav> 
+						));
+					</nav>
 
 					*/ ?>
 
@@ -27,6 +27,10 @@
 
 				</div>
 
+				<script>
+			    AOS.init();
+			  </script>
+				
 			</footer>
 
 		</div>

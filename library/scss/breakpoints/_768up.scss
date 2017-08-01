@@ -22,7 +22,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 760px;
+	width: 100%;
 }
 
 /*********************
@@ -51,6 +51,7 @@ HEADER STYLES
 .hero-menu-inner {
 	text-align: center;
 	color: $r-dark-blue;
+	background-color: $white;
 	a {
 		img {
 			max-width: 500px;
@@ -93,6 +94,8 @@ HEADER STYLES
 		}
 	}
 }
+
+
 
 /*********************
 NAVIGATION STYLES
@@ -202,6 +205,46 @@ nav {
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+/********************
+CONTENT STYLES
+********************/
+
+.section-inner {
+	text-align: center;
+	color: $r-dark-blue;
+	.section-heading {
+		margin-top: 0;
+		padding-top: 1em;
+		font-size: 3.5em;
+		font-weight: bold;
+		color: $r-dark-blue;
+	}
+}
+
+.section-gray {
+	background-color: $r-gray;
+}
+
+.overview-outer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	.overview-gif {
+		width: 300px;
+	}
+	.overview-infographic-inner {
+		padding: 0 75px 0 75px;
+		
+		img {
+			width: 100px;
+		}
+		p {
+			font-family: $Panton;
+			font-size: 1.2em;
+		}
+	}
+}
 
 /********************
 WORDPRESS BODY CLASSES

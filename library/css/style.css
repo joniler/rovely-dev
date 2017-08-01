@@ -1061,6 +1061,22 @@ only seen on tablets or desktops in the stylesheets targeted for
 those viewpoints.
 
 ******************************************************************/
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); }
+  40% {
+    transform: translateY(-30px); }
+  60% {
+    transform: translateY(-15px); } }
+
+.animated {
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 2s; }
+
+.bounce {
+  animation-name: bounce; }
+
 /*********************
 GENERAL STYLES
 *********************/
@@ -1509,7 +1525,7 @@ GENERAL STYLES
 LAYOUT & GRID STYLES
 *********************/
   .wrap {
-    width: 760px; }
+    width: 100%; }
   /*********************
 HEADER STYLES
 *********************/
@@ -1525,7 +1541,8 @@ HEADER STYLES
     margin: 0; }
   .hero-menu-inner {
     text-align: center;
-    color: #043D5D; }
+    color: #043D5D;
+    background-color: #fff; }
     .hero-menu-inner a img {
       max-width: 500px;
       padding: 3em; }
@@ -1617,6 +1634,33 @@ NAVIGATION STYLES
         top: auto;
         visibility: visible; }
   /* end .nav */
+  /********************
+CONTENT STYLES
+********************/
+  .section-inner {
+    text-align: center;
+    color: #043D5D; }
+    .section-inner .section-heading {
+      margin-top: 0;
+      padding-top: 1em;
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #043D5D; }
+  .section-gray {
+    background-color: #F2F2F2; }
+  .overview-outer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .overview-outer .overview-gif {
+      width: 300px; }
+    .overview-outer .overview-infographic-inner {
+      padding: 0 75px 0 75px; }
+      .overview-outer .overview-infographic-inner img {
+        width: 100px; }
+      .overview-outer .overview-infographic-inner p {
+        font-family: "Panton";
+        font-size: 1.2em; }
   /********************
 WORDPRESS BODY CLASSES
 style a page via class

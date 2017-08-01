@@ -24,6 +24,7 @@
 
 		<?php // favicons (for more: http://www.jonathantneal.com/blog/understand-the-favicon/) ?>
 		<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+
 		<!--[if IE]>
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
@@ -33,6 +34,8 @@
         <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<link href="<?php echo get_template_directory_uri(); ?>/bower_components/aos/dist/aos.css" rel="stylesheet">
+		<script src="<?php echo get_template_directory_uri(); ?>/bower_components/aos/dist/aos.js"></script>
 
 		<?php // put font scripts like Typekit here ?>
 		<?php // end fonts ?>
@@ -83,10 +86,10 @@
 
 						</div>
 						<div class="hero-taglines">
-							<h1 class="hero-tagline-1"><?php the_field('tagline_1', 'option'); ?></h1>
-							<h2 class="hero-tagline-2"><?php the_field('tagline_2', 'option'); ?></h2>
+							<h1 class="hero-tagline-1" data-aos="fade-up"><?php the_field('tagline_1', 'option'); ?></h1>
+							<h2 class="hero-tagline-2" data-aos="fade-up"><?php the_field('tagline_2', 'option'); ?></h2>
 						</div>
-						<a href="#overview"><img class="next-arrow" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
+						<a href="#overview"><img class="next-arrow animated bounce" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
 					</div>
 				</div>
 

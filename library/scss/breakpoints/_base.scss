@@ -13,6 +13,30 @@ those viewpoints.
 
 ******************************************************************/
 
+// ANIMATIONS
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+	40% {
+  	transform: translateY(-30px);
+  }
+	60% {
+    transform: translateY(-15px);
+  }
+}
+
+.animated{
+	animation-fill-mode: both;
+	animation-iteration-count: infinite;
+	animation-duration:2s;
+}
+
+.bounce {
+	animation-name: bounce;
+}
+
 /*********************
 GENERAL STYLES
 *********************/
