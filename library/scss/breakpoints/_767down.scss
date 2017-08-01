@@ -1,5 +1,5 @@
 /******************************************************************
-Site Name: 
+Site Name:
 Author:
 
 Stylesheet: Below Tablet
@@ -15,7 +15,9 @@ I find it easier to do it this way than to have to override base styles.
 NAVIGATION STYLES
 *********************/
 
-nav {}
+nav {
+	display: none;
+}
 
 .header-nav {}
 
@@ -44,7 +46,7 @@ nav {}
 
 		&:last-child {}
 
-		/* 
+		/*
 		Are you really going to use drop-down menus for mobile?
 		Probably not. We almost always use the Responsive Menu
 		plugin: https://wordpress.org/plugins/responsive-menu/

@@ -31,23 +31,84 @@ HEADER STYLES
 
 .header {
 
+ #inner-header {
+	 background-color: $r-dark-blue;
+	 width: 100%;
+	 display: flex;
+	 align-items: center;
+	 justify-content: flex-start;
+ }
 }
 
 	#logo {
-
-		img {}
+		img {
+			width: 300px;
+			padding: 1.5em;
+			margin: 0;
+		}
 	}
+
+.hero-menu-inner {
+	text-align: center;
+	color: $r-dark-blue;
+	a {
+		img {
+			max-width: 500px;
+			padding: 3em;
+		}
+	}
+	.hero-nav-container {
+		.hero-nav {
+			font-family: $PantonLight;
+			font-size: 1.2em;
+			color: $r-dark-blue;
+			display: flex;
+			justify-content: center;
+			li {
+				list-style: none;
+				font-size: 1.5em;
+				padding: 0 20px 0 20px;
+				a {
+					text-decoration: none;
+					color: $r-dark-blue;
+					&:hover {
+						color: lighten($r-dark-blue, 15);
+					}
+				}
+			}
+		}
+	}
+	.hero-taglines {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.hero-tagline-1 {
+			color: $r-dark-blue;
+			font-weight: bold;
+			padding: 120px 1em 120px 1em;
+		}
+		.hero-tagline-2 {
+			color: $r-dark-blue;
+			padding: 0 1em 120px 1em;
+		}
+	}
+}
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
-nav {}
+nav {
+	margin-left: auto;
+	margin-right: 1em;
+	@media screen and (max-width: 1050px) {
+		display: none;
+	}
+}
 
 .main-menu {}
 
 .header-nav { // class on the main navigation nav element
-	
 }
 
 .nav { // the ul element
@@ -55,21 +116,26 @@ nav {}
 	padding: 0;
 	border: 0;
 	list-style-type: none;
+	font-family: $Panton;
+	font-weight: normal;
+	font-size: 1.3em;
+	color: $white;
 	li {
 		float: left;
 		list-style: none;
 		a {
-			display: block;
 			padding: 0.2em;
 			border-bottom: 0;
 			text-decoration: none;
+			color: $white;
+			padding: 0 15px 0 15px;
 
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				text-decoration: underline;
+				color: lighten($r-green, 12);
 			}
 		}
 

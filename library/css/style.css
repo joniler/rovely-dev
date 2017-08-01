@@ -437,6 +437,8 @@ template {
     clear: both; }
 
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .image-replacement,
@@ -468,8 +470,8 @@ use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
 /******************************************************************
-Site Name: 
-Author: 
+Site Name:
+Author:
 
 Stylesheet: Typography
 
@@ -478,7 +480,7 @@ Stylesheet: Typography
 "Web design is 95% typography" — Oliver Reichenstein
 
 When that quote was made in 2006 it was before web fonts, auto-play video,
-and animated pop-ups so even if it is 65 or 75% today that is still *most* 
+and animated pop-ups so even if it is 65 or 75% today that is still *most*
 of any web site's design. Understanding some of the basics of typography
 (and web typography) will go a long way.
 
@@ -511,28 +513,53 @@ FONT FACE (IN YOUR FACE)
   on embedding fonts, go to:
   http://www.fontsquirrel.com/
   Be sure to remove the comment brackets.
-  
-  Also, you don't have to include a separate name for 
+
+  Also, you don't have to include a separate name for
   each font style...just use the same name and
   declare each style separately. See here:
   http://www.newnet-soft.com/blog/csstypography
 */
-/*  @font-face {
-      font-family: 'Font Name';
-      src: url('library/fonts/font-name.eot');
-      src: url('library/fonts/font-name.eot?#iefix') format('embedded-opentype'),
-             url('library/fonts/font-name.woff') format('woff'),
-             url('library/fonts/font-name.ttf') format('truetype'),
-             url('library/fonts/font-name.svg#font-name') format('svg');
-      font-weight: normal;
-      font-style: normal;
-  }
-*/
+@font-face {
+  font-family: 'Panton';
+  src: url("../../library/fonts/panton_bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Panton';
+  src: url("../../library/fonts/panton_italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'PantonLight';
+  src: url("../../library/fonts/panton_light_italic.woff") format("woff");
+  font-weight: lighter;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'PantonLight';
+  src: url("../../library/fonts/panton_light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Panton';
+  src: url("../../library/fonts/panton_regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Panton';
+  src: url("../../library/fonts/panton_semibold.woff") format("woff");
+  font-weight: bolder;
+  font-style: normal; }
+
 /*********************
 FONT STACKS
 *********************/
 /*
- Commented out since WP uses system fonts now but if you can't let go I won't be upset. 
+ Commented out since WP uses system fonts now but if you can't let go I won't be upset.
 */
 /*
 some nice typographical defaults
@@ -543,12 +570,13 @@ p {
   word-break: break-word;
   word-wrap: break-word;
   -webkit-hyphens: none;
-  -ms-hyphens: none;
-      hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
   -webkit-hyphenate-before: 2;
   -webkit-hyphenate-after: 3;
   hyphenate-lines: 3;
   -webkit-font-feature-settings: "liga", "dlig";
+  -moz-font-feature-settings: "liga=1, dlig=1";
   -ms-font-feature-settings: "liga", "dlig";
   -o-font-feature-settings: "liga", "dlig";
   font-feature-settings: "liga", "dlig"; }
@@ -1130,6 +1158,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 500;
   line-height: 1.2;
   text-rendering: optimizelegibility;
+  font-family: "Panton";
   /*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -1168,6 +1197,9 @@ HEADER STYLES
 
 #site-title {
   font-size: 2em; }
+
+.next-arrow {
+  padding-bottom: 1.5em; }
 
 /*********************
 NAVIGATION STYLES
@@ -1413,7 +1445,7 @@ compete with the base styles.
 *********************/
 @media only screen and (max-width: 767px) {
   /******************************************************************
-Site Name: 
+Site Name:
 Author:
 
 Stylesheet: Below Tablet
@@ -1427,6 +1459,8 @@ I find it easier to do it this way than to have to override base styles.
   /*********************
 NAVIGATION STYLES
 *********************/
+  nav {
+    display: none; }
   .nav {
     margin: 0;
     padding: 0;
@@ -1436,7 +1470,7 @@ NAVIGATION STYLES
     /* highlight current page */
     /* end current highlighters */ }
     .nav li {
-      /* 
+      /*
 		Are you really going to use drop-down menus for mobile?
 		Probably not. We almost always use the Responsive Menu
 		plugin: https://wordpress.org/plugins/responsive-menu/
@@ -1479,14 +1513,68 @@ LAYOUT & GRID STYLES
   /*********************
 HEADER STYLES
 *********************/
+  .header #inner-header {
+    background-color: #043D5D;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+  #logo img {
+    width: 300px;
+    padding: 1.5em;
+    margin: 0; }
+  .hero-menu-inner {
+    text-align: center;
+    color: #043D5D; }
+    .hero-menu-inner a img {
+      max-width: 500px;
+      padding: 3em; }
+    .hero-menu-inner .hero-nav-container .hero-nav {
+      font-family: "PantonLight";
+      font-size: 1.2em;
+      color: #043D5D;
+      display: flex;
+      justify-content: center; }
+      .hero-menu-inner .hero-nav-container .hero-nav li {
+        list-style: none;
+        font-size: 1.5em;
+        padding: 0 20px 0 20px; }
+        .hero-menu-inner .hero-nav-container .hero-nav li a {
+          text-decoration: none;
+          color: #043D5D; }
+          .hero-menu-inner .hero-nav-container .hero-nav li a:hover {
+            color: #076da6; }
+    .hero-menu-inner .hero-taglines {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .hero-menu-inner .hero-taglines .hero-tagline-1 {
+        color: #043D5D;
+        font-weight: bold;
+        padding: 120px 1em 120px 1em; }
+      .hero-menu-inner .hero-taglines .hero-tagline-2 {
+        color: #043D5D;
+        padding: 0 1em 120px 1em; }
   /*********************
 NAVIGATION STYLES
 *********************/
+  nav {
+    margin-left: auto;
+    margin-right: 1em; } }
+  @media only screen and (min-width: 768px) and (max-width: 1050px) {
+    nav {
+      display: none; } }
+
+@media only screen and (min-width: 768px) {
   .nav {
     margin: 0;
     padding: 0;
     border: 0;
     list-style-type: none;
+    font-family: "Panton";
+    font-weight: normal;
+    font-size: 1.3em;
+    color: #fff;
     /* end .menu ul li */
     /* highlight current page */
     /* end current highlighters */ }
@@ -1498,16 +1586,17 @@ NAVIGATION STYLES
 		*/
       /* showing sub-menus */ }
       .nav li a {
-        display: block;
         padding: 0.2em;
         border-bottom: 0;
         text-decoration: none;
+        color: #fff;
+        padding: 0 15px 0 15px;
         /*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/ }
         .nav li a:hover, .nav li a:focus {
-          text-decoration: underline; }
+          color: #22e785; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         position: absolute;
@@ -1663,8 +1752,7 @@ though, go for it.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
-            filter: none !important;
+    filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {
     color: #444 !important;
@@ -1700,4 +1788,3 @@ though, go for it.
   .respond-form,
   nav {
     display: none; } }
-/*# sourceMappingURL=style.css.map */
