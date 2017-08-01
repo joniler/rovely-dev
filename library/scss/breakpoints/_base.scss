@@ -132,6 +132,13 @@ a, a:visited {
 	}
 }
 
+a.anchor {
+	display: block;
+	position: relative;
+	top: -130px;
+	visibility: hidden;
+}
+
 /******************************************************************
 HEADING STYLES
 ******************************************************************/

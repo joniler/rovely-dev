@@ -216,6 +216,7 @@ CONTENT STYLES
 	.section-heading {
 		margin-top: 0;
 		padding-top: 1em;
+		padding-bottom: 1em;
 		font-size: 3.5em;
 		font-weight: bold;
 		color: $r-dark-blue;
@@ -230,12 +231,12 @@ CONTENT STYLES
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	padding: 0 2em 0 2em;
 	.overview-gif {
 		width: 300px;
 	}
-	.overview-infographic-inner {
-		padding: 0 75px 0 75px;
-		
+	.overview-infographic {
+		padding: 0 1em 0 1em;
 		img {
 			width: 100px;
 		}
@@ -244,6 +245,31 @@ CONTENT STYLES
 			font-size: 1.2em;
 		}
 	}
+}
+
+.hiw-outer {
+	display: flex;
+	justify-content: center;
+	padding: 2em;
+	.hiw-infographic {
+		display: flex;
+		align-items: flex-start;
+		.hiw-infographic-inner {
+			img {
+				height: 80px;
+			}
+			p {
+				font-family: $Panton;
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+
+.background-slide {
+	height: 400px;
+	background-size: 100%;
+	background-position: center;
 }
 
 /********************
