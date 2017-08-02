@@ -1,6 +1,6 @@
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="wrap cf">
+				<div id="inner-footer" class="cf">
 
 					<?php /* Uncomment this and the 'Footer Links' menu registration in template.php to use.
 					Or delete it if you're not using it.
@@ -22,8 +22,8 @@
 					</nav>
 
 					*/ ?>
-
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+					<img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-white.svg" />
+					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Rovely</p>
 
 				</div>
 

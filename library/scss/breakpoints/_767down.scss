@@ -12,11 +12,77 @@ I find it easier to do it this way than to have to override base styles.
 ******************************************************************/
 
 /*********************
+HEADER STYLES
+*********************/
+
+.header {
+	background-color: $white;
+ #inner-header {
+	 background-color: $r-dark-blue;
+	 width: 100%;
+	 display: flex;
+	 align-items: center;
+	 justify-content: flex-start;
+ }
+}
+
+	#logo {
+		img {
+			width: 200px;
+			padding: 1.5em;
+			margin: 0;
+		}
+	}
+
+.hero-menu-inner {
+	text-align: center;
+	color: $r-dark-blue;
+	background-color: $white;
+	a {
+		img {
+			max-width: 350px;
+			padding: 3em;
+		}
+	}
+	.hero-nav-container {
+		.hero-nav {
+			display: none;
+		}
+	}
+	.hero-taglines {
+		padding: 0 4em 0 4em;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.hero-tagline-1 {
+			color: $r-dark-blue;
+			font-weight: bold;
+			padding: 80px 1em 80px 1em;
+			font-size: 2em;
+		}
+		.hero-tagline-2 {
+			color: $r-dark-blue;
+			padding: 0 1em 130px 1em;
+			font-size: 1.5em;
+		}
+	}
+}
+
+
+
+/*********************
 NAVIGATION STYLES
 *********************/
 
 nav {
-	display: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style-type: none;
+	font-family: $Panton;
+	font-weight: normal;
+	font-size: 1.3em;
+	color: $white;
 }
 
 .header-nav {}
@@ -86,3 +152,294 @@ nav {
 	}  /* end current highlighters */
 
 } /* end .nav */
+
+// GENERAL STYLES
+nav {
+	margin-left: auto;
+	margin-right: 1em;
+	@media screen and (max-width: 1050px) {
+		display: none;
+	}
+}
+
+.main-menu {}
+
+.header-nav { // class on the main navigation nav element
+}
+
+.nav { // the ul element
+	li {
+		a {
+			/*
+			you can use hover styles here even though this size
+			has the possibility of being a mobile device.
+			*/
+			&:hover, &:focus {
+				color: lighten($r-green, 12);
+			}
+		}
+
+		&:first-child {}
+		&:last-child {}
+
+		/*
+		plan your menus and drop-downs wisely.
+		*/
+		ul.sub-menu,
+		ul.children {
+			position: absolute;
+			z-index: 8999;
+			visibility: hidden;
+
+			li {
+
+				a {
+
+					&:hover,
+					&:focus {}
+
+					&:link {}
+				}
+
+				&:first-child {}
+
+				&:last-child {
+
+					a {
+						border-bottom: 0;
+					}
+				}
+
+				/*
+				if you need to go deeper, go nuts
+				just remember deeper menus suck
+				for usability. k, bai.
+				*/
+				ul {}
+			}
+
+			/* highlight sub-menu current page */
+			li.current-menu-item,
+			li.current_page_item,
+			li.current_page_ancestor {
+				a {}
+			}
+		}
+
+		/* showing sub-menus */
+		&:hover > ul {
+			top: auto;
+			visibility:visible;
+		}
+
+	} /* end .menu ul li */
+
+	/* highlight current page */
+	li.current-menu-item,
+	li.current_page_item,
+	li.current_page_ancestor {
+		a {}
+	}  /* end current highlighters */
+
+} /* end .nav */
+
+/********************
+CONTENT STYLES
+********************/
+
+.section-inner {
+	text-align: center;
+	color: $r-dark-blue;
+	.section-heading {
+		margin: 0;
+		padding: 1em;
+		font-size: 2.5em;
+		font-weight: bold;
+		color: $r-dark-blue;
+	}
+}
+
+.section-gray {
+	background-color: $r-gray;
+}
+
+.overview-outer {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	.overview-gif {
+		padding-top: 3em;
+		width: 200px;
+	}
+	.overview-infographic {
+		padding: 2em;
+		img {
+			width: 100px;
+		}
+		p {
+			font-family: $Panton;
+			font-size: 1.2em;
+		}
+	}
+}
+
+.hiw-outer {
+	display: flex;
+	justify-content: center;
+	padding: 0 2em 2em 2em;
+	.hiw-infographic {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		.hiw-infographic-inner {
+			padding: 2em;
+			img {
+				height: 80px;
+			}
+			p {
+				font-family: $Panton;
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.background-slide {
+	height: 400px;
+	background-size: 100%;
+	background-position: center;
+}
+
+.hiw-descriptions {
+	text-align: left;
+	padding: 2em;
+	.description-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-size: 1.5em;
+		h4 {
+			color: $r-dark-blue;
+			margin-top: 1em;
+		}
+		.list-number {
+			font-weight: bold;
+		}
+		.description-button {
+			padding: 0 2em 0 2em;
+			height: 30px;
+			width: 60px;
+			text-align: center;
+		}
+	}
+}
+
+.pricing-outer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hiw-ul {
+	.hiw-li {
+		font-family: $Panton;
+	}
+}
+
+.pricing-text {
+	font-size: 2em;
+	color: $r-dark-blue;
+	margin: 0;
+}
+
+.contact-outer {
+	padding: 0 2em 0 2em;
+	.form-header {
+		color: $r-dark-blue;
+	}
+}
+
+.button {
+	padding: 1em;
+	border: 1px $r-dark-blue solid;
+	width: auto;
+	background-color: inherit;
+	border-radius: 10px;
+	font-family: $Panton;
+	text-decoration: none;
+	transition: background-color .25s ease-in-out;
+	&:visited {
+		color: $r-dark-blue;
+	}
+	&:hover {
+		color: $white;
+		background-color: $r-dark-blue;
+		transition: background-color .25s ease-in-out;
+	}
+}
+
+.center {
+	margin: 4em auto;
+}
+
+// GRAVITY FORMS STYLING
+
+.gform_heading {
+	display: none;
+}
+
+/*** REMOVE LABEL ON FIELDS USING PLACEHOLDER ***/
+
+.gform_wrapper .top_label .gfield_label,
+.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label {
+ display: none !important;
+}
+/*** FIELD STYLING ***/
+input[type=text],
+textarea {
+ background: #fff;
+ border: none;
+ border-radius: 0;
+ color: #999 !important;
+ padding: 15px !important;
+}
+
+.gform_wrapper .gform_footer input.button {
+	padding: 1em !important;
+	border: 1px $r-dark-blue solid;
+	color: $r-dark-blue;
+  padding: .5em .5em;
+  margin: 2em 0 2em 0;
+  width: auto;
+  background-color: inherit;
+  border-radius: 10px;
+  font-family: $Panton;
+  text-decoration: none;
+  transition: background-color .25s ease-in-out;
+	&:hover {
+		color: $white;
+		background-color: $r-dark-blue;
+		transition: background-color .25s ease-in-out;
+	}
+}
+
+
+.gform_wrapper .gform_footer {
+	padding: 1em 0 2em 0 !important;
+}
+
+// FOOTER STYLES
+.footer-logo {
+	padding-top: 1em;
+	width: 90px;
+}
+
+.source-org {
+	margin-top: 0;
+	font-size: .8em;
+}

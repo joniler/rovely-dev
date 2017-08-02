@@ -89,11 +89,11 @@
 							<h1 class="hero-tagline-1" data-aos="slide-up" data-aos-easing="ease-in-back" data-aos-duration="800"><?php the_field('tagline_1', 'option'); ?></h1>
 							<h2 class="hero-tagline-2" data-aos="fade" data-aos-easing="ease-in-back" data-aos-duration="900"><?php the_field('tagline_2', 'option'); ?></h2>
 						</div>
-						<a href="#overview" data-aos="fade"><img class="next-arrow animated bounce" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
+						<a href="#overview"><img class="next-arrow animated bounce" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
 					</div>
 				</div>
 
-				<div id="inner-header" class="cf">
+				<div id="inner-header" class="cf" data-aos="fade">
 
 					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
 					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->

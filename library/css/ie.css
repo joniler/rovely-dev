@@ -301,15 +301,17 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
-.header #inner-header {
-  background-color: #043D5D;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; }
+.header {
+  background-color: #fff; }
+  .header #inner-header {
+    background-color: #043D5D;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
 
 #logo img {
-  width: 300px;
+  width: 200px;
   padding: 1.5em;
   margin: 0; }
 
@@ -320,6 +322,9 @@ HEADER STYLES
   .hero-menu-inner a img {
     max-width: 500px;
     padding: 3em; }
+  @media screen and (max-width: 1050px) {
+    .hero-menu-inner .hero-nav-container {
+      display: none; } }
   .hero-menu-inner .hero-nav-container .hero-nav {
     font-family: "PantonLight";
     font-size: 1.2em;
@@ -332,9 +337,11 @@ HEADER STYLES
       padding: 0 20px 0 20px; }
       .hero-menu-inner .hero-nav-container .hero-nav li a {
         text-decoration: none;
-        color: #043D5D; }
+        color: #043D5D;
+        transition: color .25s ease-in-out; }
         .hero-menu-inner .hero-nav-container .hero-nav li a:hover {
-          color: #076da6; }
+          transition: color .25s ease-in-out;
+          color: #087aba; }
   .hero-menu-inner .hero-taglines {
     display: flex;
     flex-direction: column;
@@ -416,7 +423,7 @@ CONTENT STYLES
   text-align: center;
   color: #043D5D; }
   .section-inner .section-heading {
-    margin-top: 0;
+    margin: 0;
     padding-top: 1em;
     padding-bottom: 1em;
     font-size: 3.5em;
@@ -444,7 +451,7 @@ CONTENT STYLES
 .hiw-outer {
   display: flex;
   justify-content: center;
-  padding: 2em; }
+  padding: 0 2em 2em 2em; }
   .hiw-outer .hiw-infographic {
     display: flex;
     align-items: flex-start; }
@@ -454,10 +461,105 @@ CONTENT STYLES
       font-family: "Panton";
       font-size: 1.2em; }
 
+.flex-column {
+  flex-direction: column; }
+
 .background-slide {
   height: 400px;
   background-size: 100%;
   background-position: center; }
+
+.hiw-descriptions {
+  text-align: left; }
+  .hiw-descriptions .description-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.5em; }
+    .hiw-descriptions .description-container h4 {
+      color: #043D5D;
+      margin-top: 1em; }
+    .hiw-descriptions .description-container .list-number {
+      font-weight: bold; }
+    .hiw-descriptions .description-container .description-button {
+      padding: 0 2em 0 2em;
+      height: 30px;
+      width: 60px;
+      text-align: center; }
+
+.pricing-outer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.hiw-ul .hiw-li {
+  font-family: "Panton"; }
+
+.pricing-text {
+  font-size: 2em;
+  color: #043D5D;
+  margin: 0; }
+
+.contact-outer {
+  padding: 0 2em 0 2em; }
+  .contact-outer .form-header {
+    color: #043D5D; }
+
+.button {
+  padding: 1em;
+  border: 1px #043D5D solid;
+  width: auto;
+  background-color: inherit;
+  border-radius: 10px;
+  font-family: "Panton";
+  text-decoration: none;
+  transition: background-color .25s ease-in-out; }
+  .button:visited {
+    color: #043D5D; }
+  .button:hover {
+    color: #fff;
+    background-color: #043D5D;
+    transition: background-color .25s ease-in-out; }
+
+.center {
+  margin: 4em auto; }
+
+.gform_heading {
+  display: none; }
+
+/*** REMOVE LABEL ON FIELDS USING PLACEHOLDER ***/
+.gform_wrapper .top_label .gfield_label,
+.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label {
+  display: none !important; }
+
+/*** FIELD STYLING ***/
+input[type=text],
+textarea {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  color: #999 !important;
+  padding: 15px !important; }
+
+.gform_wrapper .gform_footer input.button {
+  padding: 1em !important;
+  border: 1px #043D5D solid;
+  color: #043D5D;
+  padding: .5em .5em;
+  margin: 2em 0 2em 0;
+  width: auto;
+  background-color: inherit;
+  border-radius: 10px;
+  font-family: "Panton";
+  text-decoration: none;
+  transition: background-color .25s ease-in-out; }
+  .gform_wrapper .gform_footer input.button:hover {
+    color: #fff;
+    background-color: #043D5D;
+    transition: background-color .25s ease-in-out; }
+
+.gform_wrapper .gform_footer {
+  padding: 1em 0 2em 0 !important; }
 
 /********************
 WORDPRESS BODY CLASSES
@@ -525,6 +627,13 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
+.footer-logo {
+  padding-top: 1em;
+  width: 120px; }
+
+.source-org {
+  margin-top: 0; }
+
 /*
 you'll probably need to do quite a bit
 of overriding here if you styled them for

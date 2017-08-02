@@ -46,6 +46,7 @@ html {
 }
 
 body {
+	background-color: $white;
 	color: #333333;
 	font-size: 100%;
 	font-family: $sans;
@@ -135,7 +136,7 @@ a, a:visited {
 a.anchor {
 	display: block;
 	position: relative;
-	top: -130px;
+	top: -99px;
 	visibility: hidden;
 }
 
@@ -707,6 +708,11 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
+	#inner-footer {
+		padding: 1em;
+		background-color: $r-blue-black;
+		color: $white;
+	}
 }
 
 	.footer-links {
