@@ -48,8 +48,6 @@
 															<?php echo $text; ?>
 														</p>
 
-												    <?php echo $content; ?>
-
 													</div>
 
 												<?php endwhile; ?>
@@ -77,8 +75,6 @@
 														<p class="overview-infographic-text">
 															<?php echo $text; ?>
 														</p>
-
-												    <?php echo $content; ?>
 
 													</div>
 
@@ -129,8 +125,6 @@
 															<p class="hiw-infographic-text">
 																<?php echo $text; ?>
 															</p>
-
-													    <?php echo $content; ?>
 
 														</div>
 
