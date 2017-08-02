@@ -70,6 +70,7 @@
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
+				<?php if ( is_home() || is_front_page() ) { ?>
 				<div class="hero-menu-outer">
 					<div class="hero-menu-inner">
 						<a class="hero-logo" href="#"><img src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-blue.svg" /></a>
@@ -92,6 +93,9 @@
 						<a href="#overview"><img class="next-arrow animated bounce" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
 					</div>
 				</div>
+				<?php } ?>
+
+				<?php if ( is_home() || is_front_page() ) { ?>
 
 				<div id="inner-header" class="cf" data-aos="fade">
 
@@ -118,10 +122,35 @@
 
 				</div>
 
-				<script>
-				jQuery(document).ready(function($) {
-					$('#inner-header').scrollToFixed();
-				});
-				</script>
+				<?php } ?>
+
+				<?php if ( is_page('faq')) { ?>
+
+				<div id="inner-header" class="cf" data-aos="fade">
+
+					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
+					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->
+
+					<div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-white.svg" /></a></div>
+
+					<nav class="header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+
+					<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
+						<?php wp_nav_menu(array(
+    					         'container' => false,                           // remove nav container
+    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+    					         'menu' => __( 'Alt Menu', 'templatetheme' ),  // nav name
+    					         'menu_class' => 'nav top-nav main-menu cf',               // adding custom nav class
+    					         'theme_location' => 'main-nav',                 // where it's located in the theme
+						)); ?>
+
+					</nav>
+
+					<?php // if you'd like to use the site description un-comment the below <p></p>. If not, leave as-is or delete it. ?>
+					<!-- <p class="site-description"><?php bloginfo('description'); ?></p> -->
+
+				</div>
+
+				<?php } ?>
 
 			</header>

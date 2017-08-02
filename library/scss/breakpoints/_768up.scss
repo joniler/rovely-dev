@@ -101,7 +101,6 @@ HEADER STYLES
 }
 
 
-
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -219,12 +218,12 @@ CONTENT STYLES
 	text-align: center;
 	color: $r-dark-blue;
 	.section-heading {
-		margin: 0;
 		padding-top: 1em;
 		padding-bottom: 1em;
 		font-size: 3.5em;
 		font-weight: bold;
 		color: $r-dark-blue;
+		margin: 0;
 	}
 }
 
@@ -396,6 +395,34 @@ textarea {
 
 .gform_wrapper .gform_footer {
 	padding: 1em 0 2em 0 !important;
+}
+
+.faqs {
+	padding: 2em 5em 2em 5em;
+	text-align: left;
+	background-color: $white;
+	.section-heading-faq {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		font-size: 3.5em;
+		font-weight: bold;
+		color: $r-dark-blue;
+		margin: 0;
+		text-align: center;
+	}
+	dt {
+		font-family: $Panton;
+		font-weight: bold;
+		font-size: 1.6em;
+		padding: .5em 0 .5em 0;
+		cursor: pointer;
+	}
+	.answer{
+		font-family: $Panton;
+		font-weight: normal;
+		font-size: 1.2em;
+		padding-bottom: .5em;
+	}
 }
 
 

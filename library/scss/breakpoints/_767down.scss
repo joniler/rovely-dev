@@ -443,3 +443,31 @@ textarea {
 	margin-top: 0;
 	font-size: .8em;
 }
+
+.faqs {
+	padding: 2em;
+	text-align: left;
+	background-color: $white;
+	.section-heading-faq {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		font-size: 3.5em;
+		font-weight: bold;
+		color: $r-dark-blue;
+		margin: 0;
+		text-align: center;
+	}
+	dt {
+		font-family: $Panton;
+		font-weight: bold;
+		font-size: 1.6em;
+		padding: .5em 0 .5em 0;
+		cursor: pointer;
+	}
+	.answer{
+		font-family: $Panton;
+		font-weight: normal;
+		font-size: 1.1em;
+		padding-bottom: .5em;
+	}
+}
