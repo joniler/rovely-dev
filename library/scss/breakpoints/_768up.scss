@@ -25,191 +25,277 @@ LAYOUT & GRID STYLES
 	width: 100%;
 }
 
+.form-wrap {
+	width: 700px;
+	margin: 0 auto;
+}
+
 /*********************
 HEADER STYLES
 *********************/
 
 .header {
-	background-color: $white;
- #inner-header {
-	 background-color: $r-dark-blue;
-	 width: 100%;
-	 display: flex;
-	 align-items: center;
-	 justify-content: flex-start;
- }
+
 }
 
-	#logo {
-		img {
-			width: 200px;
-			padding: 1.5em;
-			margin: 0;
-		}
-	}
-
-.hero-menu-inner {
-	text-align: center;
-	color: $r-dark-blue;
-	background-color: $white;
-	a {
-		img {
-			max-width: 500px;
-			padding: 3em;
-		}
-	}
-	.hero-nav-container {
-		@media screen and (max-width: 1050px) {
-			display: none;
-		}
-		.hero-nav {
-			font-family: $PantonLight;
-			font-size: 1.2em;
-			color: $r-dark-blue;
-			display: flex;
-			justify-content: center;
-			li {
-				list-style: none;
-				font-size: 1.5em;
-				padding: 0 20px 0 20px;
-				a {
-					text-decoration: none;
-					color: $r-dark-blue;
-					transition: color .25s ease-in-out;
-					&:hover {
-						transition: color .25s ease-in-out;
-						color: lighten($r-dark-blue, 19);
-					}
-				}
-			}
-		}
-	}
-	.hero-taglines {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		.hero-tagline-1 {
-			color: $r-dark-blue;
-			font-weight: bold;
-			padding: 120px 1em 120px 1em;
-		}
-		.hero-tagline-2 {
-			color: $r-dark-blue;
-			padding: 0 1em 120px 1em;
-		}
+#logo {
+	img {
+		width: 200px;
 	}
 }
+
+.logo-dark {
+	img {
+		width: 200px;
+	}
+}
+
 
 
 /*********************
 NAVIGATION STYLES
 *********************/
 
-nav {
-	margin-left: auto;
-	margin-right: 1em;
-	@media screen and (max-width: 1050px) {
-		display: none;
-	}
-}
+nav {}
 
 .main-menu {}
 
 .header-nav { // class on the main navigation nav element
+
 }
 
-.nav { // the ul element
-	margin: 0;
-	padding: 0;
-	border: 0;
-	list-style-type: none;
+.header {
+	background-color: $white;
 	font-family: $Panton;
-	font-weight: normal;
-	font-size: 1.3em;
-	color: $white;
-	li {
-		float: left;
-		list-style: none;
-		a {
-			padding: 0.2em;
-			border-bottom: 0;
-			text-decoration: none;
-			color: $white;
+	font-size: 1.2em;
+	transition: background-color 200ms ease-in;
+	#inner-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.logo-dark {
+		padding: 1em;
+	}
+	#logo {
+		display: none;
+	}
+	.nav { // the ul element
+		margin: 0;
+		padding: 0;
+		border: 0;
+		list-style-type: none;
+		padding: 0 0 2em 0;
+		li {
+			float: left;
+			list-style: none;
 			padding: 0 15px 0 15px;
-
-			/*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/
-			&:hover, &:focus {
-				color: lighten($r-green, 12);
-			}
-		}
-
-		&:first-child {}
-		&:last-child {}
-
-		/*
-		plan your menus and drop-downs wisely.
-		*/
-		ul.sub-menu,
-		ul.children {
-			position: absolute;
-			z-index: 8999;
-			visibility: hidden;
-
-			li {
-
-				a {
-
-					&:hover,
-					&:focus {}
-
-					&:link {}
-				}
-
-				&:first-child {}
-
-				&:last-child {
-
-					a {
-						border-bottom: 0;
-					}
-				}
+			a {
+				display: block;
+				padding: 0.2em;
+				border-bottom: 0;
+				text-decoration: none;
+				color: $r-dark-blue;
 
 				/*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
 				*/
-				ul {}
+				&:hover, &:focus {
+					text-decoration: none;
+					color: lighten($r-dark-blue, 18);
+				}
 			}
 
-			/* highlight sub-menu current page */
-			li.current-menu-item,
-			li.current_page_item,
-			li.current_page_ancestor {
-				a {}
+			&:first-child {}
+			&:last-child {}
+
+			/*
+			plan your menus and drop-downs wisely.
+			*/
+			ul.sub-menu,
+			ul.children {
+				position: absolute;
+				z-index: 8999;
+				visibility: hidden;
+
+				li {
+
+					a {
+
+						&:hover,
+						&:focus {}
+
+						&:link {}
+					}
+
+					&:first-child {}
+
+					&:last-child {
+
+						a {
+							border-bottom: 0;
+						}
+					}
+
+					/*
+					if you need to go deeper, go nuts
+					just remember deeper menus suck
+					for usability. k, bai.
+					*/
+					ul {}
+				}
+
+				/* highlight sub-menu current page */
+				li.current-menu-item,
+				li.current_page_item,
+				li.current_page_ancestor {
+					a {}
+				}
 			}
+
+			/* showing sub-menus */
+			&:hover > ul {
+				top: auto;
+				visibility:visible;
+			}
+
+		} /* end .menu ul li */
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor {
+			a {}
+		}  /* end current highlighters */
+
+	} /* end .nav */
+}
+
+.header.sticky {
+	transition: background-color 200ms ease-in;
+	#inner-header{
+	height: 110px;
+	background-color: $r-dark-blue;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	transition: background-color 200ms ease-in;
+	}
+	#logo {
+		display: block;
+		img {
+			padding: 1em;
+			width: 200px;
 		}
+	}
+	.logo-dark {
+		display: none;
+		transition: display 600ms ease-in;
+	}
+	nav {
+		margin-left: auto;
+	}
 
-		/* showing sub-menus */
-		&:hover > ul {
-			top: auto;
-			visibility:visible;
-		}
+	.main-menu {}
 
-	} /* end .menu ul li */
+	.header-nav { // class on the main navigation nav element
 
-	/* highlight current page */
-	li.current-menu-item,
-	li.current_page_item,
-	li.current_page_ancestor {
-		a {}
-	}  /* end current highlighters */
+	}
 
-} /* end .nav */
+	.nav { // the ul element
+		margin: 0;
+		padding: 0;
+		border: 0;
+		list-style-type: none;
+		padding-right: 15px;
+			@media screen and (max-width: 1050px) {
+				display: none;
+			}
+		li {
+			float: left;
+			list-style: none;
+			a {
+				display: block;
+				padding: 0.2em;
+				border-bottom: 0;
+				text-decoration: none;
+				color: $r-orange;
 
+				/*
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
+				*/
+				&:hover, &:focus {
+					text-decoration: none;
+					color: $r-light-blue;
+				}
+			}
+
+			&:first-child {}
+			&:last-child {}
+
+			/*
+			plan your menus and drop-downs wisely.
+			*/
+			ul.sub-menu,
+			ul.children {
+				position: absolute;
+				z-index: 8999;
+				visibility: hidden;
+
+				li {
+
+					a {
+
+						&:hover,
+						&:focus {}
+
+						&:link {}
+					}
+
+					&:first-child {}
+
+					&:last-child {
+
+						a {
+							border-bottom: 0;
+						}
+					}
+
+					/*
+					if you need to go deeper, go nuts
+					just remember deeper menus suck
+					for usability. k, bai.
+					*/
+					ul {}
+				}
+
+				/* highlight sub-menu current page */
+				li.current-menu-item,
+				li.current_page_item,
+				li.current_page_ancestor {
+					a {}
+				}
+			}
+
+			/* showing sub-menus */
+			&:hover > ul {
+				top: auto;
+				visibility:visible;
+			}
+
+		} /* end .menu ul li */
+
+		/* highlight current page */
+		li.current-menu-item,
+		li.current_page_item,
+		li.current_page_ancestor {
+			a {}
+		}  /* end current highlighters */
+
+	} /* end .nav */
+}
 /********************
 CONTENT STYLES
 ********************/
@@ -229,6 +315,26 @@ CONTENT STYLES
 
 .section-gray {
 	background-color: $r-gray;
+}
+
+.hero-outer {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	.hero-inner {
+
+		.hero-taglines {
+			.hero-tagline-1 {
+				color: $r-dark-blue;
+				padding: 2em 0 0 0;
+			}
+			.hero-tagline-2 {
+				color: $r-dark-blue;
+				padding: 2em 0 2em 0;
+			}
+		}
+	}
 }
 
 .overview-outer {
@@ -282,24 +388,50 @@ CONTENT STYLES
 
 .hiw-descriptions {
 	text-align: left;
+	display: flex;
+	align-items: center;
+	font-family: $Panton;
+	.description-container li.description::before {
+			counter-increment: section;
+			content: counter(section);
+			font-size: 2em;
+			background-color: $r-dark-blue;
+			color: white;
+			font-weight: bold;
+			padding: 3px 15px;
+			border-radius: 10px;
+			width: 80px;
+		}
 	.description-container {
 		display: flex;
-		flex-direction: row;
-		align-items: center;
-		font-size: 1.5em;
-		h4 {
-			color: $r-dark-blue;
-			margin-top: 1em;
+		margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+		counter-reset: section;
+		.description {
+			padding: 1em;
+			width: 49%;
+			a {
+				color: $r-dark-blue;
+			}
+			h4 {
+				color: $r-dark-blue;
+				margin-top: 1em;
+				text-align: left;
+				font-size: 2em;
+			}
+			ul {
+				list-style: circle;
+				list-style-position: inside;
+				padding: 0;
+			}
 		}
-		.list-number {
-			font-weight: bold;
-		}
-		.description-button {
-			padding: 0 2em 0 2em;
-			height: 30px;
-			width: 60px;
-			text-align: center;
-		}
+	}
+}
+
+.iphone-graphic-inner {
+	padding: 2em;
+	img.iphone-screen {
 	}
 }
 
@@ -307,12 +439,6 @@ CONTENT STYLES
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
-.hiw-ul {
-	.hiw-li {
-		font-family: $Panton;
-	}
 }
 
 .pricing-text {
@@ -593,11 +719,6 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer-logo {
-	padding-top: 1em;
-	width: 120px;
-}
-
 .source-org {
 	margin-top: 0;
 }

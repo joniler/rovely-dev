@@ -71,36 +71,13 @@
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
 				<?php if ( is_home() || is_front_page() ) { ?>
-				<div class="hero-menu-outer">
-					<div class="hero-menu-inner">
-						<a class="hero-logo" href="#"><img src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-blue.svg" /></a>
-						<div class="hero-nav-container" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
 
-						<?php // see all default args here: https://developer.wordpress.org/reference/functions/wp_nav_menu/ ?>
-							<?php wp_nav_menu(array(
-	    					         'container' => false,                           // remove nav container
-	    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-	    					         'menu' => __( 'The Main Menu', 'templatetheme' ),  // nav name
-	    					         'menu_class' => 'hero-nav top-nav main-menu cf',               // adding custom nav class
-	    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-							)); ?>
-
-						</div>
-						<div class="hero-taglines">
-							<h1 class="hero-tagline-1" data-aos="slide-up" data-aos-easing="ease-in-back" data-aos-duration="800"><?php the_field('tagline_1', 'option'); ?></h1>
-							<h2 class="hero-tagline-2" data-aos="fade" data-aos-easing="ease-in-back" data-aos-duration="900"><?php the_field('tagline_2', 'option'); ?></h2>
-						</div>
-						<a href="#overview"><img class="next-arrow animated bounce" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
-					</div>
-				</div>
-				<?php } ?>
-
-				<?php if ( is_home() || is_front_page() ) { ?>
-
-				<div id="inner-header" class="cf" data-aos="fade">
+				<div id="inner-header" class="cf" data-aos="fade" data-aos-anchor-placement="top-center">
 
 					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
 					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->
+
+					<a class="logo-dark" href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-blue.svg" /></a>
 
 					<div id="logo" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-white.svg" /></a></div>
 

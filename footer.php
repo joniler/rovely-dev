@@ -22,7 +22,6 @@
 					</nav>
 
 					*/ ?>
-					<img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/library/images/rovely-logo-white.svg" />
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> Rovely</p>
 
 				</div>
@@ -35,6 +34,33 @@
 				jQuery(document).ready(function($) {
 					$('#inner-header').scrollToFixed();
 				});
+				</script>
+
+				<script>
+
+				jQuery(document).ready(function($){
+				  if( typeof is_home === "undefined" ) var is_home = $('body').hasClass('home');
+
+				  $(window).scroll(function() {
+				    if ($(this).scrollTop() > 60){
+				      $('header.header').addClass("sticky");
+				      $('#menu-logo').insertBefore('#menu-item-106');
+				    } else {
+				      $('header.header').removeClass("sticky");
+				    }
+				  });
+
+				  if($(window).scrollTop()) {
+				    $('header.header').addClass("sticky");
+				    $('#menu-logo').insertBefore('#menu-item-106');
+				  }
+
+				  if($('header.header').hasClass('sticky')) {
+				    $('#menu-logo').insertBefore('#menu-item-106');
+				  }
+
+				});
+
 				</script>
 
 			</footer>

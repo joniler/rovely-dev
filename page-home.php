@@ -14,6 +14,16 @@
 
 						<main id="main" class="m-all t-all d-all cf" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
+							<div class="hero-outer">
+								<div class="hero-inner">
+									<div class="hero-taglines">
+										<h1 class="hero-tagline-1" data-aos="fade" data-aos-easing="ease-in-back" data-aos-duration="600"><?php the_field('tagline_1', 'option'); ?></h1>
+										<h2 class="hero-tagline-2" data-aos="fade" data-aos-easing="ease-in-back" data-aos-duration="900"><?php the_field('tagline_2', 'option'); ?></h2>
+									</div>
+									<a href="#overview"><img class="next-arrow animated bounce" src="<?php echo get_template_directory_uri(); ?>/library/images/next-arrow.svg" alt="next icon"/></a>
+								</div>
+							</div>
+
 							<!-- START OVERVIEW SECTION -->
 
 							<a class="anchor" id="overview"></a>
@@ -24,15 +34,15 @@
 
 									<?php $overview_gif = get_field('overview_gif'); ?>
 
-									<h3 class="section-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500"><?php the_field('overview_heading'); ?></h3>
+									<h3 class="section-heading" data-aos="fade" data-aos-easing="linear" data-aos-anchor-placement="top-center"><?php the_field('overview_heading'); ?></h3>
 
-										<div class="overview-outer" data-aos="fade-down">
+										<div class="overview-outer" data-aos="fade" data-aos-anchor-placement="top-center">
 
-											<?php if( have_rows('overview_infographic_2') ): ?>
+											<?php if( have_rows('overview_infographic_1') ): ?>
 
 												<div class="overview-infographic">
 
-													<?php while( have_rows('overview_infographic_2') ): the_row();
+													<?php while( have_rows('overview_infographic_1') ): the_row();
 
 													// vars
 													$icon = get_sub_field('icon');
@@ -40,7 +50,7 @@
 
 													?>
 
-													<div class="overview-infographic">
+													<div class="overview-infographic-inner">
 
 														<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
 
@@ -56,11 +66,11 @@
 
 											<?php endif; ?>
 
-											<?php if( have_rows('overview_infographic_1') ): ?>
+											<?php if( have_rows('overview_infographic_2') ): ?>
 
 												<div class="overview-infographic">
 
-													<?php while( have_rows('overview_infographic_1') ): the_row();
+													<?php while( have_rows('overview_infographic_2') ): the_row();
 
 													// vars
 													$icon = get_sub_field('icon');
@@ -68,7 +78,7 @@
 
 													?>
 
-													<div class="overview-infographic-inner">
+													<div class="overview-infographic">
 
 														<img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" />
 
@@ -102,9 +112,9 @@
 
 									<div class="section-inner wrap">
 
-										<h3 class="section-heading" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500" data-aos-anchor-placement="bottom-bottom"><?php the_field('hiw_heading_1'); ?></h3>
+										<h3 class="section-heading" data-aos="fade-up" data-aos-anchor-placement="top-center"><?php the_field('hiw_heading_1'); ?></h3>
 
-											<div class="hiw-outer" data-aos="fade-up">
+											<div class="hiw-outer" data-aos="fade-up" data-aos-anchor-placement="top-center">
 
 												<?php if( have_rows('hiw_infographics') ): ?>
 
@@ -154,47 +164,95 @@
 
 								<div class="section-inner wrap">
 
-									<h3 class="section-heading" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"><?php the_field('hiw_heading_2'); ?></h3>
+										<h3 class="section-heading" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="500"><?php the_field('hiw_heading_2'); ?></h3>
 
-									<div class="hiw-outer" data-aos="fade-up">
+									<div class="hiw-outer" data-aos="fade-down">
 
-										<?php if( have_rows('hiw_descriptions') ): ?>
 
-											<div class="hiw-descriptions">
+												<div class="hiw-descriptions">
 
-												<?php while( have_rows('hiw_descriptions') ): the_row();
+													<ol class="description-container">
 
-												// vars
-												$description = get_sub_field('description');
-												$details = get_sub_field('details');
+														<?php if( have_rows('hiw_description_1') ):
 
-												?>
-												<div class="description-container">
+															while( have_rows('hiw_description_1') ): the_row();
 
-													<h4><?php echo $description; ?></h4>
+																// vars
+																$description = get_sub_field('description');
+																$details = get_sub_field('details');
+
+																?>
+																<li class="description">
+																	<h4><?php echo $description; ?></h4>
+																	<?php
+
+																		$lines = explode("\n", $details); // or use PHP PHP_EOL constant
+																		if ( !empty($lines) ) {
+																		  echo '<ul>';
+																		  foreach ( $lines as $line ) {
+																		    echo '<li class="nocounter">'. trim( $line ) .'</li>';
+																		  }
+																		  echo '</ul>';
+																		}
+																	?>
+																</li>
+															<?php endwhile; ?>
+
+														<?php endif; ?>
+
+														<?php if( have_rows('hiw_description_2') ):
+
+															while( have_rows('hiw_description_2') ): the_row();
+
+																// vars
+																$description = get_sub_field('description');
+																$details = get_sub_field('details');
+
+																?>
+																<li class="description">
+																	<h4><?php echo $description; ?></h4>
+																	<?php
+
+																		$lines = explode("\n", $details); // or use PHP PHP_EOL constant
+																		if ( !empty($lines) ) {
+																		  echo '<ul>';
+																		  foreach ( $lines as $line ) {
+																		    echo '<li>'. trim( $line ) .'</li>';
+																		  }
+																		  echo '</ul>';
+																		}
+																	?>
+																</li>
+															<?php endwhile; ?>
+
+														<?php endif; ?>
+
+													</ol>
 
 												</div>
 
-												<?php
-													$items = get_sub_field('details');
+											</div>
 
-													$lines = explode("\n", $items); // or use PHP PHP_EOL constant
-													if ( !empty($lines) ) {
-													  echo '<ul class="hiw-ul">';
-													  foreach ( $lines as $line ) {
-													    echo '<li class="hiw-li">'. trim( $line ) .'</li>';
-													  }
-													  echo '</ul>';
-													}
-												?>
+											<?php if( have_rows('iphone_graphic') ):
 
-											<?php endwhile; ?>
+												while( have_rows('iphone_graphic') ): the_row();
+
+													// vars
+													$iphone = get_sub_field('iphone');
+													$gif = get_sub_field('gif');
+
+													?>
+													<div id="iphone-graphic-outer">
+														<div class="iphone-graphic-inner">
+															<img class="iphone-blank" src="<?php echo $iphone['url']; ?>" alt="<?php echo $iphone['alt']; ?>" />
+															<img class="iphone-screen" src="<?php echo $gif['url']; ?>" alt="<?php echo $gif['alt']; ?>" />
+														</div>
+													</div>
+												<?php endwhile; ?>
+
+											<?php endif; ?>
 
 										</div>
-
-										<?php endif; ?>
-
-								</div>
 
 							</section>
 
@@ -230,9 +288,9 @@
 
 							<section class="section-outer section-gray section-base cf">
 
-								<div class="section-inner wrap">
+								<div class="section-inner form-wrap">
 
-									<h3 class="section-heading" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"><?php the_field('contact_heading'); ?></h3>
+									<h3 class="contact-heading" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500"><?php the_field('contact_heading'); ?></h3>
 
 									<div class="contact-outer" data-aos="fade-up">
 

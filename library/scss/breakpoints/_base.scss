@@ -47,6 +47,7 @@ html {
 
 body {
 	background-color: $white;
+	counter-reset: item;
 	color: #333333;
 	font-size: 100%;
 	font-family: $sans;
@@ -226,6 +227,20 @@ HEADER STYLES
 	display: none;
 }
 
+.expand-collapse-buttons {
+	text-decoration: none;
+	color: $r-dark-blue;
+	font-family: $Panton;
+}
+
+.contact-heading {
+	padding-top: 1em;
+	padding-bottom: .5em;
+	font-size: 3.5em;
+	font-weight: bold;
+	color: $r-dark-blue;
+	margin: 0;
+}
 /*********************
 NAVIGATION STYLES
 *********************/

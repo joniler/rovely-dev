@@ -14,7 +14,6 @@
 
 						<main id="main" class="m-all t-all d-all cf section-gray" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
-							<!-- <a id="expand-all" href="javascript:void(0);">Expand all</a> | <a id="collapse-all" href="javascript:void(0);">Collapse all</a> -->
 							<section class="section-outer section-white section-base cf">
 
 								<div class="section-inner wrap">
@@ -22,6 +21,8 @@
 									<dl class="faqs">
 
 										<h3 class="section-heading-faq">FAQ</h3>
+
+										<a class="expand-collapse-buttons" id="expand-all" href="javascript:void(0);">Expand all</a> | <a class="expand-collapse-buttons" id="collapse-all" href="javascript:void(0);">Collapse all</a>
 
 										<dt class="question">I already do social media marketing – how would <span class="rovely-text">Rovely</span> work with that?</dt>
 										<dd class="answer"><span class="rovely-text">Rovely</span> expands the reach of your existing online content. <span class="rovely-text">Rovely</span> helps drive additional traffic to your content to help you deepen your relationship with existing customers, grow your audience and your business.</dd>

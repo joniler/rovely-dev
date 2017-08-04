@@ -298,124 +298,158 @@ LAYOUT & GRID STYLES
 .wrap {
   width: 100%; }
 
+.form-wrap {
+  width: 700px;
+  margin: 0 auto; }
+
 /*********************
 HEADER STYLES
 *********************/
-.header {
-  background-color: #fff; }
-  .header #inner-header {
-    background-color: #043D5D;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; }
-
 #logo img {
-  width: 200px;
-  padding: 1.5em;
-  margin: 0; }
+  width: 200px; }
 
-.hero-menu-inner {
-  text-align: center;
-  color: #043D5D;
-  background-color: #fff; }
-  .hero-menu-inner a img {
-    max-width: 500px;
-    padding: 3em; }
-  @media screen and (max-width: 1050px) {
-    .hero-menu-inner .hero-nav-container {
-      display: none; } }
-  .hero-menu-inner .hero-nav-container .hero-nav {
-    font-family: "PantonLight";
-    font-size: 1.2em;
-    color: #043D5D;
-    display: flex;
-    justify-content: center; }
-    .hero-menu-inner .hero-nav-container .hero-nav li {
-      list-style: none;
-      font-size: 1.5em;
-      padding: 0 20px 0 20px; }
-      .hero-menu-inner .hero-nav-container .hero-nav li a {
-        text-decoration: none;
-        color: #043D5D;
-        transition: color .25s ease-in-out; }
-        .hero-menu-inner .hero-nav-container .hero-nav li a:hover {
-          transition: color .25s ease-in-out;
-          color: #087aba; }
-  .hero-menu-inner .hero-taglines {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-    .hero-menu-inner .hero-taglines .hero-tagline-1 {
-      color: #043D5D;
-      font-weight: bold;
-      padding: 120px 1em 120px 1em; }
-    .hero-menu-inner .hero-taglines .hero-tagline-2 {
-      color: #043D5D;
-      padding: 0 1em 120px 1em; }
+.logo-dark img {
+  width: 200px; }
 
 /*********************
 NAVIGATION STYLES
 *********************/
-nav {
-  margin-left: auto;
-  margin-right: 1em; }
-  @media screen and (max-width: 1050px) {
-    nav {
-      display: none; } }
-
-.nav {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style-type: none;
+.header {
+  background-color: #fff;
   font-family: "Panton";
-  font-weight: normal;
-  font-size: 1.3em;
-  color: #fff;
-  /* end .menu ul li */
-  /* highlight current page */
-  /* end current highlighters */ }
-  .nav li {
-    float: left;
-    list-style: none;
-    /*
-		plan your menus and drop-downs wisely.
-		*/
-    /* showing sub-menus */ }
-    .nav li a {
-      padding: 0.2em;
-      border-bottom: 0;
-      text-decoration: none;
-      color: #fff;
+  font-size: 1.2em;
+  transition: background-color 200ms ease-in;
+  /* end .nav */ }
+  .header #inner-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .header .logo-dark {
+    padding: 1em; }
+  .header #logo {
+    display: none; }
+  .header .nav {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style-type: none;
+    padding: 0 0 2em 0;
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .header .nav li {
+      float: left;
+      list-style: none;
       padding: 0 15px 0 15px;
       /*
-			you can use hover styles here even though this size
-			has the possibility of being a mobile device.
-			*/ }
-      .nav li a:hover, .nav li a:focus {
-        color: #22e785; }
-    .nav li ul.sub-menu,
-    .nav li ul.children {
-      position: absolute;
-      z-index: 8999;
-      visibility: hidden;
-      /* highlight sub-menu current page */ }
-      .nav li ul.sub-menu li,
-      .nav li ul.children li {
+			plan your menus and drop-downs wisely.
+			*/
+      /* showing sub-menus */ }
+      .header .nav li a {
+        display: block;
+        padding: 0.2em;
+        border-bottom: 0;
+        text-decoration: none;
+        color: #043D5D;
         /*
-				if you need to go deeper, go nuts
-				just remember deeper menus suck
-				for usability. k, bai.
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
 				*/ }
-        .nav li ul.sub-menu li:last-child a,
-        .nav li ul.children li:last-child a {
-          border-bottom: 0; }
-    .nav li:hover > ul {
-      top: auto;
-      visibility: visible; }
+        .header .nav li a:hover, .header .nav li a:focus {
+          text-decoration: none;
+          color: #0877b5; }
+      .header .nav li ul.sub-menu,
+      .header .nav li ul.children {
+        position: absolute;
+        z-index: 8999;
+        visibility: hidden;
+        /* highlight sub-menu current page */ }
+        .header .nav li ul.sub-menu li,
+        .header .nav li ul.children li {
+          /*
+					if you need to go deeper, go nuts
+					just remember deeper menus suck
+					for usability. k, bai.
+					*/ }
+          .header .nav li ul.sub-menu li:last-child a,
+          .header .nav li ul.children li:last-child a {
+            border-bottom: 0; }
+      .header .nav li:hover > ul {
+        top: auto;
+        visibility: visible; }
 
-/* end .nav */
+.header.sticky {
+  transition: background-color 200ms ease-in;
+  /* end .nav */ }
+  .header.sticky #inner-header {
+    height: 110px;
+    background-color: #043D5D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: background-color 200ms ease-in; }
+  .header.sticky #logo {
+    display: block; }
+    .header.sticky #logo img {
+      padding: 1em;
+      width: 200px; }
+  .header.sticky .logo-dark {
+    display: none;
+    transition: display 600ms ease-in; }
+  .header.sticky nav {
+    margin-left: auto; }
+  .header.sticky .nav {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style-type: none;
+    padding-right: 15px;
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    @media screen and (max-width: 1050px) {
+      .header.sticky .nav {
+        display: none; } }
+    .header.sticky .nav li {
+      float: left;
+      list-style: none;
+      /*
+			plan your menus and drop-downs wisely.
+			*/
+      /* showing sub-menus */ }
+      .header.sticky .nav li a {
+        display: block;
+        padding: 0.2em;
+        border-bottom: 0;
+        text-decoration: none;
+        color: #FCB941;
+        /*
+				you can use hover styles here even though this size
+				has the possibility of being a mobile device.
+				*/ }
+        .header.sticky .nav li a:hover, .header.sticky .nav li a:focus {
+          text-decoration: none;
+          color: #0BABD5; }
+      .header.sticky .nav li ul.sub-menu,
+      .header.sticky .nav li ul.children {
+        position: absolute;
+        z-index: 8999;
+        visibility: hidden;
+        /* highlight sub-menu current page */ }
+        .header.sticky .nav li ul.sub-menu li,
+        .header.sticky .nav li ul.children li {
+          /*
+					if you need to go deeper, go nuts
+					just remember deeper menus suck
+					for usability. k, bai.
+					*/ }
+          .header.sticky .nav li ul.sub-menu li:last-child a,
+          .header.sticky .nav li ul.children li:last-child a {
+            border-bottom: 0; }
+      .header.sticky .nav li:hover > ul {
+        top: auto;
+        visibility: visible; }
+
 /********************
 CONTENT STYLES
 ********************/
@@ -432,6 +466,18 @@ CONTENT STYLES
 
 .section-gray {
   background-color: #F2F2F2; }
+
+.hero-outer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .hero-outer .hero-inner .hero-taglines .hero-tagline-1 {
+    color: #043D5D;
+    padding: 2em 0 0 0; }
+  .hero-outer .hero-inner .hero-taglines .hero-tagline-2 {
+    color: #043D5D;
+    padding: 2em 0 2em 0; }
 
 .overview-outer {
   display: flex;
@@ -470,30 +516,48 @@ CONTENT STYLES
   background-position: center; }
 
 .hiw-descriptions {
-  text-align: left; }
+  text-align: left;
+  display: flex;
+  align-items: center;
+  font-family: "Panton"; }
+  .hiw-descriptions .description-container li.description::before {
+    counter-increment: section;
+    content: counter(section);
+    font-size: 2em;
+    background-color: #043D5D;
+    color: white;
+    font-weight: bold;
+    padding: 3px 15px;
+    border-radius: 10px;
+    width: 80px; }
   .hiw-descriptions .description-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-size: 1.5em; }
-    .hiw-descriptions .description-container h4 {
-      color: #043D5D;
-      margin-top: 1em; }
-    .hiw-descriptions .description-container .list-number {
-      font-weight: bold; }
-    .hiw-descriptions .description-container .description-button {
-      padding: 0 2em 0 2em;
-      height: 30px;
-      width: 60px;
-      text-align: center; }
+    margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+    counter-reset: section; }
+    .hiw-descriptions .description-container .description {
+      padding: 1em;
+      width: 49%; }
+      .hiw-descriptions .description-container .description a {
+        color: #043D5D; }
+      .hiw-descriptions .description-container .description h4 {
+        color: #043D5D;
+        margin-top: 1em;
+        text-align: left;
+        font-size: 2em; }
+      .hiw-descriptions .description-container .description ul {
+        list-style: circle;
+        list-style-position: inside;
+        padding: 0; }
+
+.iphone-graphic-inner {
+  padding: 2em; }
 
 .pricing-outer {
   display: flex;
   flex-direction: column;
   justify-content: center; }
-
-.hiw-ul .hiw-li {
-  font-family: "Panton"; }
 
 .pricing-text {
   font-size: 2em;
@@ -651,10 +715,6 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-.footer-logo {
-  padding-top: 1em;
-  width: 120px; }
-
 .source-org {
   margin-top: 0; }
 
