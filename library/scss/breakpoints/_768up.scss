@@ -175,7 +175,7 @@ nav {}
 .header.sticky {
 	transition: background-color 200ms ease-in;
 	#inner-header{
-	height: 110px;
+	height: 70px;
 	background-color: $r-dark-blue;
 	display: flex;
 	flex-direction: row;
@@ -186,7 +186,8 @@ nav {}
 		display: block;
 		img {
 			padding: 1em;
-			width: 200px;
+			padding-bottom: .8em;
+			width: 150px;
 		}
 	}
 	.logo-dark {
@@ -327,11 +328,11 @@ CONTENT STYLES
 		.hero-taglines {
 			.hero-tagline-1 {
 				color: $r-dark-blue;
-				padding: 2em 0 0 0;
+				padding: 3em 0 0 0;
 			}
 			.hero-tagline-2 {
 				color: $r-dark-blue;
-				padding: 2em 0 2em 0;
+				padding: 3em 0 7em 0;
 			}
 		}
 	}
@@ -441,10 +442,9 @@ CONTENT STYLES
 	justify-content: center;
 }
 
-.pricing-text {
-	font-size: 2em;
+.pricing{
+	font-weight: bold;
 	color: $r-dark-blue;
-	margin: 0;
 }
 
 .contact-outer {

@@ -1510,10 +1510,12 @@ HEADER STYLES
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+      height: 70px; }
   #logo img {
-    width: 200px;
-    padding: 1.5em;
+    width: 150px;
+    padding: 1em;
+    padding-bottom: .8em;
     margin: 0; }
   /*********************
 NAVIGATION STYLES
@@ -1609,13 +1611,16 @@ CONTENT STYLES
     text-align: center;
     display: flex;
     flex-direction: row;
-    justify-content: center; }
+    justify-content: center;
+    padding: 2em; }
     .hero-outer .hero-inner .hero-taglines .hero-tagline-1 {
       color: #043D5D;
-      padding: 2em 0 0 0; }
+      padding: 2em 0 0 0;
+      font-size: 2em; }
     .hero-outer .hero-inner .hero-taglines .hero-tagline-2 {
       color: #043D5D;
-      padding: 2em 0 2em 0; }
+      padding: 4em 0 8em 0;
+      font-size: 1.2em; }
   .section-gray {
     background-color: #F2F2F2; }
   .overview-outer {
@@ -1657,32 +1662,48 @@ CONTENT STYLES
   .hiw-descriptions {
     text-align: left;
     display: flex;
-    flex-direction: column; }
+    align-items: center;
+    font-family: "Panton"; }
+    .hiw-descriptions .description-container li.description::before {
+      counter-increment: section;
+      content: counter(section);
+      font-size: 2em;
+      background-color: #043D5D;
+      color: white;
+      font-weight: bold;
+      padding: 3px 15px;
+      border-radius: 10px;
+      width: 80px; }
     .hiw-descriptions .description-container {
-      width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; }
-      .hiw-descriptions .description-container a {
-        color: #043D5D; }
-      .hiw-descriptions .description-container h4 {
-        color: #043D5D;
-        margin-top: 1em;
-        text-align: left; }
+      margin-left: 0;
+      padding-right: 0;
+      list-style-type: none;
+      counter-reset: section; }
+      .hiw-descriptions .description-container .description {
+        padding: 1em;
+        width: 100%; }
+        .hiw-descriptions .description-container .description a {
+          color: #043D5D; }
+        .hiw-descriptions .description-container .description h4 {
+          color: #043D5D;
+          margin-top: 1em;
+          text-align: left;
+          font-size: 2em; }
+        .hiw-descriptions .description-container .description ul {
+          list-style: circle;
+          list-style-position: inside;
+          padding: 0; }
   .iphone-graphic-inner {
     padding: 2em; }
     .iphone-graphic-inner img.iphone-screen {
       width: 300px; }
-  .pricing-outer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
+  .pricing {
+    font-weight: bold;
+    color: #043D5D; }
   .hiw-ul .hiw-li {
     font-family: "Panton"; }
-  .pricing-text {
-    font-size: 2em;
-    color: #043D5D;
-    margin: 0; }
   .contact-outer {
     padding: 0 2em 0 2em; }
     .contact-outer .form-header {
@@ -1869,7 +1890,7 @@ NAVIGATION STYLES
     transition: background-color 200ms ease-in;
     /* end .nav */ }
     .header.sticky #inner-header {
-      height: 110px;
+      height: 70px;
       background-color: #043D5D;
       display: flex;
       flex-direction: row;
@@ -1879,7 +1900,8 @@ NAVIGATION STYLES
       display: block; }
       .header.sticky #logo img {
         padding: 1em;
-        width: 200px; }
+        padding-bottom: .8em;
+        width: 150px; }
     .header.sticky .logo-dark {
       display: none;
       transition: display 600ms ease-in; }
@@ -1960,10 +1982,10 @@ CONTENT STYLES
     justify-content: center; }
     .hero-outer .hero-inner .hero-taglines .hero-tagline-1 {
       color: #043D5D;
-      padding: 2em 0 0 0; }
+      padding: 3em 0 0 0; }
     .hero-outer .hero-inner .hero-taglines .hero-tagline-2 {
       color: #043D5D;
-      padding: 2em 0 2em 0; }
+      padding: 3em 0 7em 0; }
   .overview-outer {
     display: flex;
     justify-content: space-around;
@@ -2037,10 +2059,9 @@ CONTENT STYLES
     display: flex;
     flex-direction: column;
     justify-content: center; }
-  .pricing-text {
-    font-size: 2em;
-    color: #043D5D;
-    margin: 0; }
+  .pricing {
+    font-weight: bold;
+    color: #043D5D; }
   .contact-outer {
     padding: 0 2em 0 2em; }
     .contact-outer .form-header {

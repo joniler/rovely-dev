@@ -67,10 +67,9 @@
             	<?php }
 
             	} ?> -->
+			<?php if ( is_home() || is_front_page() ) { ?>
 
 			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
-				<?php if ( is_home() || is_front_page() ) { ?>
 
 				<div id="inner-header" class="cf" data-aos="fade" data-aos-anchor-placement="top-center">
 
@@ -99,11 +98,15 @@
 
 				</div>
 
-				<?php } ?>
+			</header>
 
-				<?php if ( is_page('faq')) { ?>
+			<?php } ?>
 
-				<div id="inner-header" class="cf" data-aos="fade">
+			<?php if ( is_page('faq')) { ?>
+
+			<header class="header sticky" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+
+				<div id="inner-header" class="cf" data-aos="fade" data-aos-anchor-placement="top-center">
 
 					<?php // You can use text or a logo (or both) in your header. Uncomment the below to use text. ?>
 					<!-- <div id="site-title" class="h1"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></div> -->
@@ -116,7 +119,7 @@
 						<?php wp_nav_menu(array(
     					         'container' => false,                           // remove nav container
     					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'Alt Menu', 'templatetheme' ),  // nav name
+    					         'menu' => __( 'The Main Menu', 'templatetheme' ),  // nav name
     					         'menu_class' => 'nav top-nav main-menu cf',               // adding custom nav class
     					         'theme_location' => 'main-nav',                 // where it's located in the theme
 						)); ?>
@@ -128,6 +131,6 @@
 
 				</div>
 
-				<?php } ?>
-
 			</header>
+
+			<?php } ?>

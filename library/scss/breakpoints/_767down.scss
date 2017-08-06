@@ -23,13 +23,15 @@ HEADER STYLES
 	 display: flex;
 	 align-items: center;
 	 justify-content: flex-start;
+	 height: 70px;
  }
 }
 
 	#logo {
 		img {
-			width: 200px;
-			padding: 1.5em;
+			width: 150px;
+			padding: 1em;
+			padding-bottom: .8em;
 			margin: 0;
 		}
 	}
@@ -230,16 +232,19 @@ CONTENT STYLES
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	padding: 2em;
 	.hero-inner {
 
 		.hero-taglines {
 			.hero-tagline-1 {
 				color: $r-dark-blue;
 				padding: 2em 0 0 0;
+				font-size: 2em;
 			}
 			.hero-tagline-2 {
 				color: $r-dark-blue;
-				padding: 2em 0 2em 0;
+				padding: 4em 0 8em 0;
+				font-size: 1.2em;
 			}
 		}
 	}
@@ -304,19 +309,43 @@ CONTENT STYLES
 .hiw-descriptions {
 	text-align: left;
 	display: flex;
-	flex-direction: column;
+	align-items: center;
+	font-family: $Panton;
+	.description-container li.description::before {
+			counter-increment: section;
+			content: counter(section);
+			font-size: 2em;
+			background-color: $r-dark-blue;
+			color: white;
+			font-weight: bold;
+			padding: 3px 15px;
+			border-radius: 10px;
+			width: 80px;
+		}
 	.description-container {
-		width: 100%;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		a {
-			color: $r-dark-blue;
-		}
-		h4 {
-			color: $r-dark-blue;
-			margin-top: 1em;
-			text-align: left;
+		margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+		counter-reset: section;
+		.description {
+			padding: 1em;
+			width: 100%;
+			a {
+				color: $r-dark-blue;
+			}
+			h4 {
+				color: $r-dark-blue;
+				margin-top: 1em;
+				text-align: left;
+				font-size: 2em;
+			}
+			ul {
+				list-style: circle;
+				list-style-position: inside;
+				padding: 0;
+			}
 		}
 	}
 }
@@ -328,22 +357,15 @@ CONTENT STYLES
 	}
 }
 
-.pricing-outer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+.pricing{
+	font-weight: bold;
+	color: $r-dark-blue;
 }
 
 .hiw-ul {
 	.hiw-li {
 		font-family: $Panton;
 	}
-}
-
-.pricing-text {
-	font-size: 2em;
-	color: $r-dark-blue;
-	margin: 0;
 }
 
 .contact-outer {
